@@ -81,4 +81,4 @@ jobs:
 
       - name: Run new container
         run: |
-          docker run -d -p 80:80 --name ci-app $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+          docker run -d -p 80:80 --name ci-app ${env:DOCKER_REGISTRY}/${env:IMAGE_NAME}:${env:IMAGE_TAG}
