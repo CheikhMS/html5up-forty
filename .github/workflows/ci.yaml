@@ -71,13 +71,13 @@ jobs:
         run: |
           docker pull ${env:DOCKER_REGISTRY}/${env:IMAGE_NAME}:${env:IMAGE_TAG}
 
-      - name: Stop existing container
-        run: |
-          docker stop ci-app || true
+      # - name: Stop existing container
+      #   run: |
+      #     docker stop ci-app || true
 
-      - name: Remove old container
-        run: |
-          docker rm ci-app || true
+      # - name: Remove old container
+      #   run: |
+      #     docker rm ci-app || true
 
       - name: Run new container
         run: |
