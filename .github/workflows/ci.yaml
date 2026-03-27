@@ -77,7 +77,9 @@ jobs:
 
       - name: Remove old container
         run: |
-          docker rm ci-app || true
+          run: |
+            docker stop ci-app 2>$null
+            exit 0
 
       - name: Run new container
         run: |
