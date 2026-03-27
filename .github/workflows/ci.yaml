@@ -73,11 +73,11 @@ jobs:
 
       - name: Stop existing container
         run: |
-          docker stop ci-app || 0
+          docker stop ci-app -ErrorAction SilentlyContinue
 
       - name: Remove old container
         run: |
-          docker rm ci-app || 0
+          docker rm ci-app -ErrorAction SilentlyContinue
 
       - name: Run new container
         run: |
